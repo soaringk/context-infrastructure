@@ -27,7 +27,7 @@ Daily     → Crontab Monitor: 健康审计，发现异常则发告警邮件
 扫描 workspace 文件变动，提取有价值的观察写入 `contexts/memory/OBSERVATIONS.md`。这是三层记忆系统的"输入端"。
 
 - **脚本**：`periodic_jobs/ai_heartbeat/src/v0/observer.py`
-- **依赖**：OpenCode Server API（`OPENCODE_API_URL`）
+- **依赖**：OpenCode Server API（需配置 `OPENCODE_BASE_URL`、`OPENCODE_USERNAME`、`OPENCODE_PASSWORD`）
 - **建议时间**：每日 8:00 AM（在 daily briefing 之后）
 
 ### AI Heartbeat Reflector（每周）
@@ -35,7 +35,7 @@ Daily     → Crontab Monitor: 健康审计，发现异常则发告警邮件
 合并、提升、清理 OBSERVATIONS.md 中积累的观察，蒸馏为更高层次的认知。
 
 - **脚本**：`periodic_jobs/ai_heartbeat/src/v0/reflector.py`
-- **依赖**：OpenCode Server API（`OPENCODE_API_URL`）
+- **依赖**：OpenCode Server API（需配置 `OPENCODE_BASE_URL`、`OPENCODE_USERNAME`、`OPENCODE_PASSWORD`）
 - **建议时间**：每周日 9:00 AM
 
 ### Crontab Monitor（每日）
